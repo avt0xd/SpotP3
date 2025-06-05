@@ -4,7 +4,7 @@ An easy-to-use Spotify to MP3 converter with modern and simple UI.
 How to Install
 --------------
 
-1. Install flash, yt_dlp and tekore using the commands one-by-one
+1. Install flask, yt_dlp and tekore using the commands one-by-one
 
 
           pip install yt_dlp
