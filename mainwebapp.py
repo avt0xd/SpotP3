@@ -11,7 +11,7 @@ os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 # Initialise the client
 
-cred = tk.Credentials('11c80c8cba084aba9327af80d9c13462', '9d0d9e2da7574f8bbf4f47b5cb364fef')
+cred = tk.Credentials('client_id', 'client secret')  #Enter both inside the inverted commas
 token = cred.request_client_token()
 spotify = tk.Spotify(token)
 
@@ -25,7 +25,7 @@ def download(link):
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': os.path.join(folder_path, '%(title)s.%(ext)s'),
-        'ffmpeg_location': r'C:\ffmpeg-7.1.1-essentials_build\bin',
+        'ffmpeg_location': r'path here',  #Enter the path inside the inverted commas
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
