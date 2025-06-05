@@ -1,0 +1,31 @@
+import tekore as tk
+import yt_dlp as yt
+
+# Initialise the client
+spotify = tk.Spotify('BQC472Z7jEjDO4xNydUd0s9EC8XwfySIWw9edVLhKHTnuOGuzk3924P-mwfmJ0zmWOV4lEmw1_UUUfBaXhE4KQrR2l0fqCDANa8WD6Y6--nzn3iKZl90S0oO2ugxHxU0tAXQcoO_5AI')
+
+ydl_opts = {
+    'format': 'bestaudio/best',
+    'ffmpeg_location': r'C:\ffmpeg-7.1.1-essentials_build\bin',
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'mp3',
+        'preferredquality': '192',
+    }],
+}
+
+playlist_url=input("")
+playlist_id=playlist_url[34:56]
+
+
+# Get playlist tracks
+playlist = spotify.playlist_items(playlist_id)
+
+print("Tracks in playlist:")
+for item in playlist.items:
+    n=0
+    track = item.track
+    print(f"{track.name} – {track.artists[0].name}")
+    print(f"Downloading song {n+1}")
+    with yt.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([f'ytsearch:{track.name+track.artists[0].name}'])

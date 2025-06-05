@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>"Hello testing123</title>
+    </head>
+    <body>
+        <h1>"Homepage"</h1>
+        {% for x in range(10) %}
+            {% if x % == 0 %}
+            <p>x</p>
+            {% endif %}
+        {% endfor %}
+    
+    </body>
+</html>
